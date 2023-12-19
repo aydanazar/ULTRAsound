@@ -1,6 +1,3 @@
-Certainly! To replace the grayscale with pink (#F5A6BC), you'll need to update the CSS for the grayscale images. Here's the modified code:
-
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,4 +99,77 @@ Certainly! To replace the grayscale with pink (#F5A6BC), you'll need to update t
   <div class="w3-container" style="padding:100px 50px 100px 50px" id="mission">
     <h1 class="w3-center"><b>Our Mission</b></h1>
     <p class="w3-center w3-xlarge" style="padding:0px 10px 10px 10px"><i>61% of radiologists experience burnout</i></p>
-    <p class="w3-center
+    <p class="w3-center w3-large" style="padding:10px 10px 10px 10px">Many radiologists cite exorbitant levels of bureaucratic work and charting as a leading cause.
+Documentation can take up hours of a radiologist’s work day, taking significant time away from patient care. <br>
+      <i>How can we intervene?</i></p>
+</div>
+
+<!-- Image 2 -->
+<div class="w3-container w3-row w3-center w3-padding-48" style="background:#f3c0dbff">
+  <style>img {-webkit-filter: grayscale(100%); filter: grayscale(1);}</style>
+  <img class="w3-image w3-large" src="https://images.unsplash.com/photo-1581595219618-375a1a48d324?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" filter:grayscale(1);>
+</div>
+
+<!-- Goals -->
+<div class="w3-container  w3-light-grey" style="padding:100px 50px 100px 50px" id="goals">
+  <h1 class="w3-center"><b>Our Goals</b></h1>
+  <p class="w3-center w3-large">What we hope to accomplish with <i>ULTRAsound</i></p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-lightbulb-o w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Faster Diagnoses</p>
+      <p>By assisting the radiologists in generating reports, more patients can receive preventative care in a timely manner</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-line-chart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Driving Engagement</p>
+      <p>Reducing paperwork is a direct action against a leading cause of burnout reported by radiologists</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-edit w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Universal Reporting</p>
+      <p>Utilizing industry language to ensure findings are reported to industry standards, efficiently</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-comments w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Informed Conversations</p>
+      <p>Our reporting feature can integrate a patient-friendly translation of medical terms, allowing patients to stay informed and confident about their care</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+<footer class="w3-center w3-black w3-padding-64">
+  <p class="w3-small">Created for Data Science 210A: Capstone for Early Career Data Scientists by</p>
+  <p class="w3-medium">Kelly Zabors, Priya Reddy, Ayda Nayeb Nazar, Angikaar Singh Chana, Atharva Mehendale</p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

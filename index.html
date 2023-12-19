@@ -1,15 +1,20 @@
+Certainly! To replace the grayscale with pink (#F5A6BC), you'll need to update the CSS for the grayscale images. Here's the modified code:
+
+```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ULTRAsound</title>
-    <link rel="icon" href="web_logo.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins"}
+<head>
+  <title>ULTRAsound</title>
+  <link rel="icon" href="web_logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Poppins"
+    }
 
     body, html {
       height: 100%;
@@ -20,148 +25,81 @@
     .bgimg-1 {
       background-position: center;
       background-size: cover;
-      background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url("https://images.unsplash.com/photo-1631563018889-23f47a027973?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url("https://images.unsplash.com/photo-1631563018889-23f47a027973?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
       min-height: 100%;
     }
 
     .w3-bar .w3-button {
       padding: 16px;
     }
-    </style>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+
+    /* Replace grayscale with pink */
+    .pink-filter {
+      filter: grayscale(0); /* Disable grayscale filter */
+      background-color: #F5A6BC; /* Pink background color */
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
-  </head>
+</head>
+
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-card" id="myNavbar"; style="#f374b6">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="logo_black.png" width="150"></a>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-card pink-filter" id="myNavbar">
+      <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="logo_black.png" width="150"></a>
 
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">Our Team</a> 
-      <a href="#mission" class="w3-bar-item w3-button">Our Mission</a>
-      <a href="#goals" class="w3-bar-item w3-button">Our Goals</a>
-      <a href="https://ultrasound.streamlit.app/" class="w3-bar-item w3-button">Our Demo</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">Our Team</a>
+        <a href="#mission" class="w3-bar-item w3-button">Our Mission</a>
+        <a href="#goals" class="w3-bar-item w3-button">Our Goals</a>
+        <a href="https://ultrasound.streamlit.app/" class="w3-bar-item w3-button">Our Demo</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Our Team</a> 
-  <a href="#mission" onclick="w3_close()" class="w3-bar-item w3-button">Our Mission</a>
-  <a href="#goals" onclick="w3_close()" class="w3-bar-item w3-button">Our Goals</a>
-  <a href="https://ultrasound.streamlit.app/" class="w3-bar-item w3-button">Our Demo</a>
-</nav>
-
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo" style="padding:0px 0px 0px 0px"><b>ULTRAsound</b></span><br>
-    <span class="w3-xlarge">Helping radiologists care for those in need.</span><br>
-    <p><a href="https://ultrasound.streamlit.app/" class="w3-button w3-light-grey w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">View our demo</a></p>
-  </div> 
-</header>
-
-<!-- Landing Section -->
-<div class="w3-container" style="padding:100px 50px 100px 50px" id="about">
-  <h1 class="w3-center"><b>About the Team</b></h1>
-  <p class="w3-center w3-large">Our team, <i>The TumorAiders</i>, consists of five Master of Data Science and Information students attending the University of California, Berkeley. We received our Bachelor's from University of California, Berkeley together in May of 2022 as well.</p>
-  <p class="w3-center w3-medium" style="padding:0px 0px 0px 0px"><i>– Kelly, Ayda, Priya, Angikaar, Atharva</i></p>
-</div>
-
-
-<!-- Image 1 -->
-<div class="w3-container w3-row w3-center w3-padding-48" style="padding:100px 16px; background:#f3c0dbff">
-  <style>img {-webkit-filter: grayscale(100%); filter: grayscale(1);}</style>
-  <img class="w3-image w3-large" src="https://collaborativeimaging.com/wp-content/uploads/2021/08/shutterstock_1410714221.jpg">
-</div>
-
-<!-- Mission Section -->
-<div class="w3-container" style="padding:100px 50px 100px 50px" id="mission">
-  <h1 class="w3-center"><b>Our Mission</b></h1>
-   <p class="w3-center w3-xlarge" style="padding:0px 10px 10px 10px"><i>61% of radiologists experience burnout</i></p>
-  <p class="w3-center w3-large" style="padding:10px 10px 10px 10px">Many radiologists cite exorbitant levels of bureaucratic work and charting as a leading cause.
-Documentation can take up hours of a radiologist’s work day, taking significant time away from patient care. <br>
-<i>How can we intervene?</i>
-</p>
-</div>
-
-<!-- Image 2 -->
-<div class="w3-container w3-row w3-center w3-padding-48" style="background:#f3c0dbff">
-  <style>img {-webkit-filter: grayscale(100%); filter: grayscale(1);}</style>
-  <img class="w3-image w3-large" src="https://images.unsplash.com/photo-1581595219618-375a1a48d324?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" filter:grayscale(1);>
-</div>
-
-<!-- Goals -->
-<div class="w3-container  w3-light-grey" style="padding:100px 50px 100px 50px" id="goals">
-  <h1 class="w3-center"><b>Our Goals</b></h1>
-  <p class="w3-center w3-large">What we hope to accomplish with <i>ULTRAsound</i></p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-lightbulb-o w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Faster Diagnoses</p>
-      <p>By assisting the radiologists in generating reports, more patients can receive preventative care in a timely manner</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-line-chart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Driving Engagement</p>
-      <p>Reducing paperwork is a direct action against a leading cause of burnout reported by radiologists</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-edit w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Universal Reporting</p>
-      <p>Utilizing industry language to ensure findings are reported to industry standards, efficiently</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-comments w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Informed Conversations</p>
-      <p>Our reporting feature can integrate a patient-friendly translation of medical terms, allowing patients to stay informed and confident about their care</p>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
   </div>
-</div>
 
-<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-<footer class="w3-center w3-black w3-padding-64">
-  <p class="w3-small">Created for Data Science 210A: Capstone for Early Career Data Scientists by</p>
-  <p class="w3-medium">Kelly Zabors, Priya Reddy, Ayda Nayeb Nazar, Angikaar Singh Chana, Atharva Mehendale</p>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none"
+    id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Our Team</a>
+    <a href="#mission" onclick="w3_close()" class="w3-bar-item w3-button">Our Mission</a>
+    <a href="#goals" onclick="w3_close()" class="w3-bar-item w3-button">Our Goals</a>
+    <a href="https://ultrasound.streamlit.app/" class="w3-bar-item w3-button">Our Demo</a>
+  </nav>
 
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 w3-display-container pink-filter" id="home">
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+      <span class="w3-jumbo" style="padding:0px 0px 0px 0px"><b>ULTRAsound</b></span><br>
+      <span class="w3-xlarge">Helping radiologists care for those in need.</span><br>
+      <p><a href="https://ultrasound.streamlit.app/" class="w3-button w3-light-grey w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">View our demo</a></p>
+    </div>
+  </header>
 
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
+  <!-- Landing Section -->
+  <div class="w3-container" style="padding:100px 50px 100px 50px" id="about">
+    <h1 class="w3-center"><b>About the Team</b></h1>
+    <p class="w3-center w3-large">Our team, <i>The TumorAiders</i>, consists of five Master of Data Science and Information students attending the University of California, Berkeley. We received our Bachelor's from University of California, Berkeley together in May of 2022 as well.</p>
+    <p class="w3-center w3-medium" style="padding:0px 0px 0px 0px"><i>– Kelly, Ayda, Priya, Angikaar, Atharva</i></p>
+  </div>
 
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
+  <!-- Image 1 -->
+  <div class="w3-container w3-row w3-center w3-padding-48 pink-filter">
+    <img class="w3-image w3-large" src="https://collaborativeimaging.com/wp-content/uploads/2021/08/shutterstock_1410714221.jpg">
+  </div>
 
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
-
-</body>
-</html>
+  <!-- Mission Section -->
+  <div class="w3-container" style="padding:100px 50px 100px 50px" id="mission">
+    <h1 class="w3-center"><b>Our Mission</b></h1>
+    <p class="w3-center w3-xlarge" style="padding:0px 10px 10px 10px"><i>61% of radiologists experience burnout</i></p>
+    <p class="w3-center
